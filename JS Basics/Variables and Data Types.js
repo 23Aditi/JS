@@ -23,7 +23,8 @@ let p = {
     city : "Pune"
 };
 console.log(p);
-
+hello = "hello";
+console.log(hello);
 /*
 
 /workspaces/JS/JS Basics/Variables and Data Types.js:9
