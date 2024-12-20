@@ -22,7 +22,7 @@ let p = {
     age : 18,
     city : "Pune"
 };
-
+console.log(p);
 
 /*
 
