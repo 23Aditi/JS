@@ -64,3 +64,44 @@ console.log(Object.values(tinderUser)); //[ '123abc', 'Samey', false ]
 console.log(Object.entries(tinderUser));
 /*[ [ 'id', '123abc' ], [ 'name', 'Samey' ], [ 'isLoggedIn', false ] ] */
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));   //true
+
+// Destructuring
+const course = {
+    coursename : "js",
+    price : 999,
+    courseTeacher : "Mr. Hello"
+}
+
+const {courseTeacher : teacher} = course
+console.log(teacher);   //Mr. Hello
+
+
+// In react we use destructuring 
+/*const navbar = (props.company) => {
+
+}
+navbar(company = "hi")
+// So, instead of writing 'props.' again n again we use destructuring
+const navbar = ({company}) => {
+
+}
+navbar(company = "hi")*/
+
+// API returns values in JSON
+/*
+{
+    "name" : "hitesh",
+    "course" : "js in hindi",
+    "price" : 999
+}
+*/
+// API returns value in JSON format : it has objects without name , with both keys n values strings
+
+// Sometimes we get data in the form of Array of Objects also
+// JSON Formator , Random API 
+[
+    {},
+    {},
+    {}
+]
+// JavaScript Object Notation : JSON
