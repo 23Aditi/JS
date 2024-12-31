@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class = "bg-black">
+        <h1 class = "heading">Dom learning 31/12/24</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates non alias eum enim ipsum quae eaque consectetur odit beatae laboriosam.</p>
+    </div>
+    
+</body>
+</html>
+<!--
+            Windows
+            HTML
+    HEAD                 BODY
+TITLE  META                 DIV - attribute
+    |       \              /   \
+text node    attribute     h1     p - text node 
+                        /    |      
+                attribute   textNode
+-->
+
+<!--    DOM Manupilation    
+console.log(document)
+console.log(document.links) // this doesn't give js array. It can be converted into array but it's not array.
+//object
+document.getElementById('firstHeading')
+<h1 id=​"firstHeading" class=​"firstHeading mw-first-heading">​::before​<span class=​"mw-page-title-main">​Brendan Eich​</span>​</h1>​
+document.getElementById('firstHeading').innerHTML = "<h1>HAPPY NEW YEAR : 2025 : LET THE MAGIC BEGIN</h1>"
+// This changes the inner html of document.
+-->
