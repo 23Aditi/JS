@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOm</title>
+</head>
+<body style = "background-color: #212121; color : #fff">
+
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random()*10 + 1);
+    div.setAttribute("title","generated-title"); // yei value ko lekar nahi aata directly usme set kaar karta hai
+    div.style.backgroundColor = "green";
+    div.style.padding = "12px";
+    div.innerText = "Hello"; // yei pahale values ka reference lekar aata hai fir set karta hai
+    // Esliye setAttribute sei ek round trip bachta hai
+    const addText = document.createTextNode("Let the magic begin !");
+    div.appendChild(addText);
+    document.body.appendChild(div);
+
+    function createNewDiv(color,text,padding){
+        const div = document.createElement('div');
+        div.style.backgroundColor= color;
+        div.innerText = text;
+        div.style.padding = padding;
+        document.body.appendChild(div);
+    }
+    createNewDiv('cyan','Hey! I m created using Java Script!!','15px')
+
+</script>
+</html>
