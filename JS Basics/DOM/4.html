@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style = "background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language')
+        .appendChild(li);   //every time tree is defined
+    }
+
+    addLanguage("python");
+    addLanguage("typeScript");
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage("golang");
+    addOptiLanguage("Scala");
+    /*appendChild() adds a node as the last child of a specified parent node.
+    */
+   /* As it adds directly at the last it saves tree traversal time*/
+   const secondLang = document.querySelector("li:nth-child(2)")
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo";
+    secondLang.replaceWith(newli);
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = "<li>Type Script</li>"
+
+
+    //remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove()
+
+    
+</script>
+</html>
