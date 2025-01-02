@@ -1,0 +1,30 @@
+html{
+    margin : "15px";
+}
+span{
+    display: block;
+    padding : "20px";
+    
+}
+
+.canvas{
+    margin: 100px auto 100px;
+    width : 80%;
+    text-align: center;
+}
+
+#grey{
+    background: grey;
+}
+#white{
+    background: white;
+}
+#blue{
+    background: blue;
+}
+#yellow{
+    background: yellow;
+}
+
+
+
