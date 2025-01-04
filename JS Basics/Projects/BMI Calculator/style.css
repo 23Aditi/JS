@@ -1,0 +1,25 @@
+.container{
+    width: 600px;
+    height: 900px;
+
+    background-color: gray;
+    padding: 30px;
+}
+#height,#weight{
+    width : 150px;
+    height : 30 px;
+    margin-top: 30px;
+}
+
+#weight-guide{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.heading{
+    padding: 30px;
+    align-self: auto;
+}
+
+body{
+    background-color: black;
+}
