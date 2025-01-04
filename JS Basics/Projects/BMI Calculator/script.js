@@ -11,7 +11,14 @@ document.querySelector('form').addEventListener('submit',function(event){
         results.innerHTML = "Please give a valid weight";
     }else{
         const BMI = (weight/((height*height)/10000)).toFixed(2);
-        results.innerHTML = `<span>BMI : ${BMI}</span>`
+        
+        if(BMI<18.6){
+            results.innerHTML = `<span>BMI : ${BMI} , You are under-weight !!!</span>`
+        }else if(BMI>=18.6 && BMI<=24.9){
+            results.innerHTML = `<span>BMI : ${BMI} , Your weight is in normal range !!!</span>`
+        }else{
+            results.innerHTML = `<span>BMI : ${BMI} , You are over-weight !!!</span>`
+        }
     }
 })
 
