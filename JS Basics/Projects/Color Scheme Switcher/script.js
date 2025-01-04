@@ -4,7 +4,7 @@ const body = document.querySelector('body');
 //event can be taken into functions
 
 button.forEach(function (button){
-    console.log(button);
+    //console.log(button);
     // event listener 
     button.addEventListener('click',function(event){
         console.log(event);
@@ -27,6 +27,27 @@ button.forEach(function (button){
     })
 });
 
+/*
+const button = document.querySelectorAll('.button');
+const body = document.querySelector('body');
+const heading = document.querySelector('h2');
+//console.log(button);
+button.forEach(function (b){
+  b.addEventListener('mouseover',function (event){
+    const color = event.target.id;
+    if(['grey','blue','white','yellow'].includes(color)){
+      body.style.backgroundColor = color;
+      const newheading = document.createElement('h2');
+      newheading.textContent = `Hey your mouse was on ${color}`;
+      heading.replaceWith(newheading);
+    }else{
+      body.style.backgroundColor = '#212121';
+    }
 
+
+  })
+})
+
+*/
 
 
