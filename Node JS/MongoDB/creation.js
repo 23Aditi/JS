@@ -1,12 +1,16 @@
-let MongoClient = require('mongodb').MongoClient;
-let url = "mongodb://localhost:27017/mydb";
+require('dotenv').config();
+const { MongoClient } = require('mongodb');
 
-MongoClient.connect(url, function(err,db){
-    if(err) throw err;
-    console.log("Database Created !!!");
-    db.close();
-})
+const url = process.env.MONGODB_URI;
 
+async function connectToDb() {
+    try {
+        const client = await MongoClient.connect(url);
+        console.log("Database Connected!");
+        return client;
+    } catch (err) {
+        console.error("Error connecting to database:", err);
+    }
+}
 
-
-
+connectToDb();
