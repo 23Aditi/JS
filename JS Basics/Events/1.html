@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style = "background-color: #414141; color : aliceblue">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('Owl')"></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    
+    // // most events in js happen sequentially.
+    // // prefer not to inject events js code in html using onclick
+    // //document.getElementById('river').onclick(alert("river clicked"))
+
+    // // best approach
+    // // document.getElementById('photoshop').addEventListener('click',function(){
+    // //     alert("Adobe")
+    // // },false);
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked insides UL"); // PointerEvent
+    //     // Browser Event and Environment event
+    // },false);
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("clicked inside OWL"); // PointerEvent
+    //     e.stopPropagation(); // Event won't bubble and go to upper part
+    //     // Browser Event and Environment event
+    // },false);
+    // // Bubbling up - event propogation (bottom to top (owl to ul))
+    // // Capturing more - 3rd parameter is true (top to bottom(ul to owl))
+    // // Event coupling and event capaturing.
+    // /*
+    // type , timestamp , default Prevented , target , toElement , curr target, srcElement
+    // screenX screenY clientX clientY 
+    // altkey , clrtkey , shiftkey  , keyCode
+    // */
+    // // attachEvents() , jQuery 
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();
+        console.log("google clicked");
+        
+    },false)
+
+    // Removing Images from page
+    document.querySelector('#images').addEventListener('click',
+        function(e){
+            //console.log(e.target.id);
+            console.log(e.target.parentNode);
+            let removeIt = e.target.parentNode;
+            if(e.target.tagName === 'IMG'){
+                removeIt.remove();
+            }
+            // removeIt.remove();
+            //removeIt.parentNode.removeChild(removeIt);
+        },false)
+
+</script>
+</html>
